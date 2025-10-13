@@ -20,6 +20,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winText;
     public GameObject capsule;
+    public GameObject poweruptext;
+    public Material sphere_material;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +34,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         winText.SetActive(false);
         capsule.SetActive(false);
         isGrounded = true;
+        poweruptext.SetActive(false);
+        sphere_material.color = Color.red;
     }
 
     private void FixedUpdate()
@@ -97,6 +101,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             speed = 10;
             capsule.SetActive(false);
+            poweruptext.SetActive(true);
+            sphere_material.color = Color.darkBlue;
         }
 
     }
